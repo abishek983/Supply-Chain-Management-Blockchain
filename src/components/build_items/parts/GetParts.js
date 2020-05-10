@@ -38,7 +38,8 @@ class GetParts extends Component {
                 <form onSubmit={this.onSubmit}>
                     <h1>Get Parts Details</h1>
                     <div>
-                        <a href="/" className="btn btn-outline-primary btn-sm">Build Parts</a>
+                        <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
+                        <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                     </div>
                     <div className="text-danger">If the product doesn't exist or doesn't belong to You,Manufacturer would be 0x0000...</div>
                     <label htmlFor="Serial NUmber">Serial Number</label>

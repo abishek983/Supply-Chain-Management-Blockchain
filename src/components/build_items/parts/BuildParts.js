@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import web3 from '../../../web3';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import ProductInstance from '../../../interface/product_management';
+import ChangeOwnerShipInstance from '../../../interface/change_ownership';
 import Spinner from '../../spinner';
 
 class BuildParts extends Component {
@@ -12,7 +13,9 @@ class BuildParts extends Component {
         part_details: {},
         success: false,
         loading: false,
-        exist: false
+        exist: false,
+        ownership: false,
+        message : ''
     };
 
     async componentDidMount() {
@@ -42,16 +45,29 @@ class BuildParts extends Component {
     }
 
     addOwnership = () => {
-        console.log("working");
+        this.setState({loading:true, success : false});
+        ChangeOwnerShipInstance.methods.addOwnership(0,this.state.serial)
+            .send({from : this.state.accounts[0]} ,(err)=>{
+                this.setState({loading:false});
+                if(err){
+                    this.setState({message : "Add Ownership failed"});
+                }
+                else{
+                    this.setState({message : "Add Ownership Succesful"});
+                }
+                this.setState({serial : '', type:''});
+                setTimeout(() => this.setState({message : ''}),3000)
+            })
     }
 
     render() {
-        const { serial, type, exist, loading, part_details, success } = this.state;
+        const { serial, type, exist, loading, success, message } = this.state;
         return (
             <div className="container mx-auto">
                 <h1 className="text-uppercase my-10">BuildParts</h1>
                 <span>
-                    <a href="/getParts" className="btn btn-outline-primary btn-sm">Part Detials</a>
+                    <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Detials</a>
+                    <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                 </span>
                 <form onSubmit={this.onSubmit}>
                     {exist && <div className="alert alert-danger" role="alert">
@@ -73,6 +89,7 @@ class BuildParts extends Component {
                         <button className="btn btn-danger mx-2" onClick={this.addOwnership}>Add Ownership</button>
                     </div>
                 }
+                <span className="text-danger">{message}</span>
             </div>
         )
     }
