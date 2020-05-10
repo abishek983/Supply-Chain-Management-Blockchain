@@ -2,46 +2,45 @@ import React, { Component } from 'react';
 import ChangeOwnerShipInstance from '../interface/change_ownership';
 import Spinner from './spinner';
 
-
-class AddOwnerShip extends Component {
+class ChangeOwnerShip extends Component {
     state = {
-        serial: '',
-        type: '',
-        loading: false,
-        message: ''
+        type : '',
+        serial : '',
+        sendTo : '',
+        loading : false,
+        message : ''
     }
-
-    onChange = (e) => {
+    onChange = (e) =>{
         this.setState({ [e.target.name]: e.target.value })
-        // console.log(e.target.name, " " ,e.target.value);
     }
 
-    onSubmit = async (e) => {
+    onSubmit = (e) =>{
         e.preventDefault();
         this.setState({ loading: true });
-        ChangeOwnerShipInstance.methods.addOwnership(0, this.state.serial)
+        const {type, serial, sendTo} = this.state;
+        ChangeOwnerShipInstance.methods.changeOwnership(type, serial, sendTo)
                             .send({ from: this.props.accounts[0]})
                             .then(() =>{
-                                this.setState({ message: "Add Ownership Succesful" }); 
+                                this.setState({ message: "Change OwnerShip Succesful" }); 
                                 this.setState({ loading: false });   
                             })
                             .catch(()=> {
-                                this.setState({ message: "Add Ownership failed" });
+                                this.setState({ message: "Change OwnerShip failed" });
                                 this.setState({ loading: false });
                                 setTimeout(() => this.setState({ message: '' }), 5000)
                             })
     }
 
     render() {
-        const { serial, type, loading, message } = this.state;
+        const {message, type, serial, loading, sendTo} = this.state;
         return (
             <div>
                 <form onSubmit={this.onSubmit}>
-                    <h1>Add Ownership</h1>
+                    <h1>Change Ownership</h1>
                     <div>
                         <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
                         <a href="/getParts" className="btn btn-outline-primary btn-sm mx-2">Parts Details</a>
-                        <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
+                        <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                     </div>
                     {message !== '' &&
                         <div className="alert alert-primary my-1" role="alert">
@@ -51,11 +50,14 @@ class AddOwnerShip extends Component {
                     <label htmlFor="Type">Type 0 for Part and 1 for Product</label>
                     <input type="text" className="form-control" name="type"
                         value={type} onChange={this.onChange} />
-                    <label htmlFor="Serial NUmber">Serial Number</label>
+                    <label htmlFor="Type">Serial Number</label>
                     <input type="text" className="form-control" name="serial"
                         value={serial} onChange={this.onChange} />
+                    <label htmlFor="Serial NUmber">Sender's Address</label>
+                    <input type="text" className="form-control" name="sendTo"
+                        value={sendTo} onChange={this.onChange} />
 
-                    <button className="btn btn-primary my-2">Add Ownership</button>
+                    <button className="btn btn-primary my-2">Change Ownership</button>
                     {loading && <Spinner />}
                 </form>
             </div>
@@ -63,4 +65,4 @@ class AddOwnerShip extends Component {
     }
 }
 
-export default AddOwnerShip;
+export default ChangeOwnerShip;
