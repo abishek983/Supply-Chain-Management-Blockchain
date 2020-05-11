@@ -19,7 +19,8 @@ class AddOwnerShip extends Component {
     onSubmit = async (e) => {
         e.preventDefault();
         this.setState({ loading: true });
-        ChangeOwnerShipInstance.methods.addOwnership(0, this.state.serial)
+        const {type,serial} = this.state;
+        ChangeOwnerShipInstance.methods.addOwnership(type, serial)
                             .send({ from: this.props.accounts[0]})
                             .then(() =>{
                                 this.setState({ message: "Add Ownership Succesful" }); 

@@ -18,6 +18,8 @@ class ChangeOwnerShip extends Component {
         e.preventDefault();
         this.setState({ loading: true, message : '' });
         const {type, serial, sendTo} = this.state;
+        console.log(type, serial, sendTo);
+        
         ChangeOwnerShipInstance.methods.changeOwnership(type, serial, sendTo)
                             .send({ from: this.props.accounts[0]})
                             .then(() =>{

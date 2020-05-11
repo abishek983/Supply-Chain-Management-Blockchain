@@ -28,12 +28,12 @@ class BuildProducts extends Component {
         .send({from : this.props.accounts[0]})
         .then(() => {
             this.setState({message : "Product added Successfully",loading: false});
-            setTimeout(() =>this.setState({message:''}),3000);
+            setTimeout(() =>this.setState({message:''}),5000);
 
         })
         .catch(()=>{
             this.setState({message : "OOPS!! Product couldn't be added",loading:false});
-            setTimeout(() =>this.setState({message:''}),3000);
+            setTimeout(() =>this.setState({message:''}),5000);
         })
     }
 
@@ -42,9 +42,15 @@ class BuildProducts extends Component {
         return (
             <div>
                 <h1 className="text-uppercase my-10">Build Products</h1>
-                {message!=='' && <div className="alert alert-success" role="alert">
-                        {message}
-                    </div>}
+                {message!=='' && 
+                    <div className="modal" tabindex="-1" role="dialog">
+                        <div className="modal-dialog" role="document">
+                            <div className="alert alert-success" role="alert">
+                                {message}
+                            </div>
+                        </div>
+                    </div>    
+                }
                 <span>
                     <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
                     <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Detials</a>

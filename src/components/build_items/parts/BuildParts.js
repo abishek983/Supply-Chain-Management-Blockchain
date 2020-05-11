@@ -47,17 +47,16 @@ class BuildParts extends Component {
     addOwnership = () => {
         this.setState({loading:true, success : false});
         ChangeOwnerShipInstance.methods.addOwnership(0,this.state.serial)
-            .send({from : this.state.accounts[0]} ,(err)=>{
-                this.setState({loading:false});
-                if(err){
-                    this.setState({message : "Add Ownership failed"});
-                }
-                else{
+            .send({from : this.state.accounts[0]})
+                // this.setState({loading:false})
+                .then(() => {
+                    this.setState({message : "Add Ownership Succesful",loading : false});
+                    setTimeout(() => this.setState({message : ''}),3000)
+                })
+                .catch( () => {
                     this.setState({message : "Add Ownership Succesful"});
-                }
-                this.setState({serial : '', type:''});
-                setTimeout(() => this.setState({message : ''}),3000)
-            })
+                    setTimeout(() => this.setState({message : ''}),3000)
+                })
     }
 
     render() {
