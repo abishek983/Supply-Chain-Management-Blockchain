@@ -17,7 +17,7 @@ class GetParts extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.setState({ loading: true, part_details: '' });
+        this.setState({ loading: true, part_details: '',curr_add : '' });
         ProductInstance.methods.showPart(this.state.serial)
             .call({ from: this.props.accounts[0] }, (err, part_details) => {
                 if (err) {
