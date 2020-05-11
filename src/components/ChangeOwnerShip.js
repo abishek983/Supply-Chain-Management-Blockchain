@@ -16,7 +16,7 @@ class ChangeOwnerShip extends Component {
 
     onSubmit = (e) =>{
         e.preventDefault();
-        this.setState({ loading: true });
+        this.setState({ loading: true, message : '' });
         const {type, serial, sendTo} = this.state;
         ChangeOwnerShipInstance.methods.changeOwnership(type, serial, sendTo)
                             .send({ from: this.props.accounts[0]})
@@ -41,6 +41,7 @@ class ChangeOwnerShip extends Component {
                         <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
                         <a href="/getParts" className="btn btn-outline-primary btn-sm mx-2">Parts Details</a>
                         <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
+                        <a href="/products" className="btn btn-outline-primary btn-sm mx-1">Build Product</a>
                     </div>
                     {message !== '' &&
                         <div className="alert alert-primary my-1" role="alert">

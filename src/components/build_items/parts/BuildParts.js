@@ -64,11 +64,12 @@ class BuildParts extends Component {
         const { serial, type, exist, loading, success, message } = this.state;
         return (
             <div className="container mx-auto">
-                <h1 className="text-uppercase my-10">BuildParts</h1>
+                <h1 className="text-uppercase my-10">Build Parts</h1>
                 <span>
                     <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Detials</a>
                     <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                     <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
+                    <a href="/products" className="btn btn-outline-primary btn-sm mx-1">Build Product</a>
                 </span>
                 <form onSubmit={this.onSubmit}>
                     {exist && <div className="alert alert-danger" role="alert">

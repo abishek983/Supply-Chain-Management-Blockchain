@@ -32,9 +32,16 @@ class BuildProducts extends Component {
     render() {
         return (
             <div>
+                <h1 className="text-uppercase my-10">Build Products</h1>
+                <span>
+                    <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
+                    <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Detials</a>
+                    <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
+                    <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
+                </span>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-row" onChange={this.onChange}>
-                        <div className="col my-5">
+                        <div className="col my-2">
                             <label htmlFor="Product Serial Number">Product Serial Number</label>
                             <input type="text" className="form-control" name="product" />
                             <label htmlFor="Product Type">Product Type</label>
