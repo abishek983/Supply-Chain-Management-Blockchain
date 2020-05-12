@@ -22,8 +22,9 @@ class Details extends Component {
         return (
             <div className="card" style={{width: "18rem"}}>
                 <div className="card-body">
-                    <p className="card-text"><strong>Part 1 :</strong>{part1}</p>
-                    <p className="card-text"><strong>Part 2 :</strong>{part2}</p>
+                    <p className="card-text"><strong>Serilal Number of Parts</strong></p>
+                    <p className="card-text"><strong>Part 1 : </strong>{part1}</p>
+                    <p className="card-text"><strong>Part 2 : </strong>{part2}</p>
                     <p className="card-text"><strong>Part 3 : </strong>{part3}</p>
                     <p className="card-text"><strong>Part 4 : </strong>{part4}</p>
                     <p className="card-text"><strong>Part 5 : </strong>{part5}</p>
