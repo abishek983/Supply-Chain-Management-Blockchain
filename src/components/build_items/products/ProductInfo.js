@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProductInstance from '../../../interface/product_management';
 import ChangeOwnerShipInstance from '../../../interface/change_ownership';
-import Details from './Details';
+import Details from './Product_info';
 import _ from 'lodash';
 import Spinner from '../../spinner';
 
@@ -18,7 +18,7 @@ class GetParts extends Component {
     onSubmit = (e) => {
         e.preventDefault();
         this.setState({ loading: true, part_details: '',curr_add : '' });
-        ProductInstance.methods.showPart(this.state.serial)
+        ProductInstance.methods.showProduct(this.state.serial)
             .call({ from: this.props.accounts[0] }, (err, part_details) => {
                 if (err) {
                     console.log("part doesn't exist or doesn't belongs to you")
@@ -37,7 +37,7 @@ class GetParts extends Component {
         e.preventDefault();
         const {serial} = this.state;
         this.setState({loading : true});
-        ChangeOwnerShipInstance.methods.currentOwner(0,serial)
+        ChangeOwnerShipInstance.methods.currentOwner(1,serial)
             .call({ from: this.props.accounts[0] })
             .then(curr_add => {
                 this.setState({curr_add});
@@ -45,7 +45,7 @@ class GetParts extends Component {
             })
             .catch( () => {
                 this.setState({loading : false});
-                this.setState({curr_add : "Errpr occured"});         
+                this.setState({curr_add : "Error occured"});         
             })
     }
 
@@ -57,9 +57,9 @@ class GetParts extends Component {
                     <h1>Get Parts Details</h1>
                     <div>
                         <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
+                        <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Details</a>
                         <a href="/products" className="btn btn-outline-primary btn-sm mx-1">Build Product</a>
                         <a href="/getProducts" className="btn btn-outline-primary btn-sm mx-1">Products Details</a>
-                        <a href="/productInfo" className="btn btn-outline-primary btn-sm mx-1">Product Info</a>
                         <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                         <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
                     </div>

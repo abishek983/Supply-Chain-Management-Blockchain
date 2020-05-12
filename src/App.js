@@ -9,6 +9,7 @@ import GetParts from './components/build_items/parts/GetParts';
 import GetProducts from './components/build_items/products/GetProducts';
 import AddOwnerShip from './components/AddOwnerShip';
 import ChangeOwnerShip from './components/ChangeOwnerShip';
+import ProductInfo from './components/build_items/products/ProductInfo';
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
             <Route exact path='/products' render={(props) => <BuildProducts {...props} accounts={accounts} />} />
             <Route exact path='/getParts' render={(props) => <GetParts {...props} accounts={accounts} />} />
             <Route exact path='/getProducts' render={(props) => <GetProducts {...props} accounts={accounts} />} />
+            <Route exact path='/productInfo' render={(props) => <ProductInfo {...props} accounts={accounts} />} />
             <Route exact path='/addOwnerShip' render={(props) => <AddOwnerShip {...props} accounts={accounts} />} />
             <Route exact path='/changeOwnerShip' render={(props) => <ChangeOwnerShip {...props} accounts={accounts} />} />
           </Switch>

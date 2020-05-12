@@ -65,11 +65,12 @@ class BuildParts extends Component {
             <div className="container mx-auto">
                 <h1 className="text-uppercase my-10">Build Parts</h1>
                 <span>
-                    <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Detials</a>
+                    <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Details</a>
+                    <a href="/products" className="btn btn-outline-primary btn-sm mx-1">Build Product</a>
                     <a href="/getProducts" className="btn btn-outline-primary btn-sm mx-1">Products Details</a>
+                    <a href="/productInfo" className="btn btn-outline-primary btn-sm mx-1">Product Info</a>
                     <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                     <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
-                    <a href="/products" className="btn btn-outline-primary btn-sm mx-1">Build Product</a>
                 </span>
                 <form onSubmit={this.onSubmit}>
                     {exist && <div className="alert alert-danger" role="alert">

@@ -55,6 +55,7 @@ class BuildProducts extends Component {
                     <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
                     <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Detials</a>
                     <a href="/getProducts" className="btn btn-outline-primary btn-sm mx-1">Products Details</a>
+                    <a href="/productInfo" className="btn btn-outline-primary btn-sm mx-1">Product Info</a>
                     <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                     <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
                 </span>

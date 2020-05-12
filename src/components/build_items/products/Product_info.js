@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Details extends Component {
+class Product_info extends Component {
     state = {
         manfacturer: '',
         serial_number: '',
@@ -34,4 +34,4 @@ class Details extends Component {
     }
 }
 
-export default Details;
+export default Product_info;
