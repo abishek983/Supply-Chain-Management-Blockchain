@@ -1,7 +1,7 @@
 import web3 from '../web3';
 import ProductManagement from '../build/ProductManagement.json';
 
-const address = '0xE56B51DBAaa0BD8d50009876687311098D5271a0';
+const address = '0xf9689b275ffe8bd4D6eDa327C37f7438F9094910';
 
 const abi = JSON.parse(ProductManagement.interface);
    

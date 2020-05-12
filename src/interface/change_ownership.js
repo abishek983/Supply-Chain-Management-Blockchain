@@ -1,7 +1,7 @@
 import web3 from '../web3';
 import ChangeOwnership from '../build/ChangeOwnership.json';
 
-const address = '0x31A3887da35472afdbd44D60D3a8575a94A7a0C8';
+const address = '0x5Fdd44313f6d0a1a4A7554BB513E31eda008B354';
 
 const abi = JSON.parse(ChangeOwnership.interface);
 

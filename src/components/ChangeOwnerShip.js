@@ -46,6 +46,8 @@ class ChangeOwnerShip extends Component {
                         <a href="/getProducts" className="btn btn-outline-primary btn-sm mx-1">Products Details</a>
                         <a href="/productInfo" className="btn btn-outline-primary btn-sm mx-1">Product Info</a>
                         <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
+                        <a href="/partHistory" className="btn btn-outline-primary btn-sm mx-1">Part History</a>
+                        <a href="/productHistory" className="btn btn-outline-primary btn-sm mx-1">Product History</a>
                     </div>
                     {message !== '' &&
                         <div className="alert alert-primary my-1" role="alert">
