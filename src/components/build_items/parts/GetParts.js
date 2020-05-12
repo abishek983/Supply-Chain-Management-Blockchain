@@ -57,6 +57,7 @@ class GetParts extends Component {
                     <h1>Get Parts Details</h1>
                     <div>
                         <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
+                        <a href="/getProducts" className="btn btn-outline-primary btn-sm mx-1">Products Details</a>
                         <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                         <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
                         <a href="/products" className="btn btn-outline-primary btn-sm mx-1">Build Product</a>
