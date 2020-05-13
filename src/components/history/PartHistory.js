@@ -39,7 +39,6 @@ class PartHistory extends Component {
                             <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
                             <a href="/productHistory" className="btn btn-outline-primary btn-sm mx-1">Product History</a>
                         </div>
-                        <div className="text-danger">If the product doesn't exist or doesn't belong to You,Manufacturer would be 0x0000...</div>
                         <label htmlFor="Serial NUmber">Serial Number</label>
                         <input type="text" className="form-control" name="serial"
                             value={serial} onChange={this.onChange} />
