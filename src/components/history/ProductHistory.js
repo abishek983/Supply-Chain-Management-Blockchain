@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import _ from 'lodash';
 import Spinner from '../spinner';
 import ChangeOwnerShipInstance from '../../interface/change_ownership';
 
@@ -46,7 +45,11 @@ class PartHistory extends Component {
                             value={serial} onChange={this.onChange} />
                         <button className="btn btn-primary my-2">Get Details</button>
                     </form>
-                    { result.length!=0 && result.map(data => <div>{data}</div>)}
+                    <div class="list-group">
+                        { result.length!==0 && result.map(data => 
+                        <div className="list-group-item list-group-item-action list-group-item-info">{data}</div>
+                        )}
+                    </div>
                     {loading && <Spinner />}
                 </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import web3 from './web3';
-import ProductInstance from './interface/product_management';
+// import ProductInstance from './interface/product_management';
 import ChangeOwnerShip from './interface/change_ownership';
 
 class accounts extends Component {
