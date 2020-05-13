@@ -28,7 +28,7 @@ class PartHistory extends Component {
             <div>
                 <div>
                     <form onSubmit={this.onSubmit}>
-                        <h1>Get Parts History</h1>
+                        <h1>Get Product History</h1>
                         <div>
                             <a href="/" className="btn btn-outline-primary btn-sm mx-1">Build Parts</a>
                             <a href="/getParts" className="btn btn-outline-primary btn-sm mx-1">Part Details</a>
@@ -37,7 +37,7 @@ class PartHistory extends Component {
                             <a href="/productInfo" className="btn btn-outline-primary btn-sm mx-1">Product Info</a>
                             <a href="/addOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Add Ownership</a>
                             <a href="/changeOwnerShip" className="btn btn-outline-primary btn-sm mx-1">Change Ownership</a>
-                            <a href="/productHistory" className="btn btn-outline-primary btn-sm mx-1">Product History</a>
+                            <a href="/partHistory" className="btn btn-outline-primary btn-sm mx-1">Part History</a>
                         </div>
                         <div className="text-danger">If the product doesn't exist or doesn't belong to You,Manufacturer would be 0x0000...</div>
                         <label htmlFor="Serial NUmber">Serial Number</label>
